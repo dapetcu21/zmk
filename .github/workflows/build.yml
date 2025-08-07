@@ -276,7 +276,10 @@ jobs:
                         metadata.interconnects[i].shields.flatMap(s => boardAndShield(hm, s))
                       );
                     } else {
-                      console.error("Board without keys or interconnect");
+                      return {
+                        board: hm.id,
+                        shield: 'settings_reset'
+                      };
                     }
                     break;
                   case "shield":
